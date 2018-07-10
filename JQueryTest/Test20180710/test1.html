@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../JQuery.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="jquery.cookie.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			// 给当前列表加上样式默认选择第一个
+			$("body>ul").addClass("li_ys").children("li:eq(0)").addClass("active");
+			var cookie=$.cookie("selected");
+			alert(cookie);
+			if(cookie)
+			{
+				alert(cookie);
+				$("#"+cookie).addClass("active");
+			}
+			$("body>ul>li").click(function(){
+				$(this).addClass("active").siblings().removeClass("active");
+				alert($(this).attr("id"));
+			    $.cookie( "selected" ,  this.id  , { path: '/', expires: 10 });
+			    //注意使用的是DOM对象还是Jquery对象
+			});
+		});
+	</script>
+</head>
+<!-- 简单实现切换选项保存到cookies中 -->
+<body>
+   	 <ul>
+   	 	<li id="option1">option1</li>
+   	 	<li id="option2">option2</li>
+   	 	<li id="option3">option3</li>
+   	 	<li id="option4">option4</li>
+   	 	<li id="option5">option5</li>
+   	 	<li id="option6">option6</li>
+   	 </ul>
+</body>
+</html>

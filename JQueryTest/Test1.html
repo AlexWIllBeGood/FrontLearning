@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title></title>
-</head>
+<link rel="stylesheet" href="../autocomplete20160309/dist/autocomplete.css">
+<link rel="stylesheet" href="../autocomplete20160309/style.css">
 <script type="text/javascript" src="JQuery.js"></script>
 <script type="text/javascript" src="Test1.js"></script>
+<script type="text/javascript" src="../autocomplete20160309/dist/jquery.js"></script>
+<script type="text/javascript" src="../autocomplete20160309/dist/autocomplete.js"></script>
+<script type="text/javascript">
+var proposals = ['百度1', '百度2', '百度3', '百度4', '百度5', '百度6', '百度7','呵呵呵呵呵呵呵','百度','新浪','a1','a2','a3','a4','b1','b2','b3','b4'];
+
+$(document).ready(function(){
+	$('#search-form').autocomplete({
+		hints: proposals,
+		width: 300,
+		height: 30,
+		onSubmit: function(text){
+			$('#message').html('Selected: <b>' + text + '</b>');			
+		}
+	});
+	$('#text_target').autocomplete({
+		hints: proposals,
+		width: 300,
+		height: 30,
+		onSubmit: function(text){
+		}
+	});
+});
+</script>
+</head>
 <body>
-   <input type="text" id="text_target" name="test_text" value="this is just a test!"/>
-   <input type="button" id="button_target" value="click me!"/>
+	<div id="text_target"></div>
+   <!-- <input type="file" name="" accept=".xls,.xlsx"/> -->
+   <!-- <div class="wrapper"> -->
+<!--    <input type="text" id="text_target" name="test_text"/>
+   <input type="button" id="button_target" value="click me!"/> -->
+   <!-- </div> -->
+   <div id="test_div">
+   	<input type="text" value="this is just a test"><input>
+   	<button type="button" id="test_button" >Click me!</button>
+   </div>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../JQuery.js"></script>
+    <script type="text/javascript">
+        var state=0;
+    	$(function(){
+            $("body>input[type='button']").click(function(){
+                if(state==0){
+                    // $(this).prev().fadeIn(1500);
+                    $(this).prev().slideUp(1500);
+                    state=1;
+                }
+                else{
+                    // $(this).prev().fadeOut(1000);
+                    $(this).prev().slideDown(1000);
+                    state=0;
+                }
+            });
+            //这里的属性名称不能够加引号
+            // $("body>input[type='button']").click(function(){
+            //     $(this).prev().css("display","none");
+            // });
+            // $("#test_submit").click(function(){
+            //         // alert(123);
+            //         return false;
+            //         //阻止默认的事件
+            //      });
+            // $("body>input[type='text']").val("just initial value");
+
+            // $("body>input[type='button']").bind("click",function(){
+            //      $("#test_submit").click(function(){
+            //         return false;
+            //      });
+            // });
+            // toggle(function(){
+            // 	$("body>input[type='text']").show();
+            // },function(){
+            // 	$("body>input[type='text']").show();
+            // });
+            // .bind("dblclick",function(){
+            // 	alert("you just dblclick the button named"+$(this).attr('name'));
+            // 	// $(this).trigger("click");
+            // 	//有隐藏的作用
+            // 	$(this).prev().toggle();
+            // })
+            // .bind("click",function(){
+            // 	alert("you just click the button named"+$(this).attr('name'));
+            // })
+    	});
+    </script>
+</head>
+<body>
+   <input type="text" name=""/>
+   <input type="button" name="simple button" value="click me!">
+   <a href="" id="test_link" style="display: inline-block;">just a test link!</a>
+<!--    <form>
+       <input id="test_submit" type="submit" name="" value="test"/>
+   </form> -->
+</body>
+</html>

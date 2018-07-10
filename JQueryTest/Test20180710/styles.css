@@ -1,0 +1,18 @@
+.li_ys li{
+        display:inline-block; 
+        float:left; 
+        text-align:center;
+        line-height:30px; 
+        font-size:1em; 
+        font-weight:bold; 
+        color:blue;
+        width:100px;
+        height:30px;
+        overflow:hidden;
+        border:1px solid red;
+        margin-left:5px;
+        margin-top:2px;
+    }
+    .active{
+        background:orange;
+    }

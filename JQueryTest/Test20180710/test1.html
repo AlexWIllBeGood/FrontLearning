@@ -9,8 +9,7 @@
 		$(function(){
 			// 给当前列表加上样式默认选择第一个
 			$("body>ul").addClass("li_ys").children("li:eq(0)").addClass("active");
-			var cookie=$.cookie("selected");
-			alert(cookie);
+			var cookie=$.cookie("style_cookie");
 			if(cookie)
 			{
 				alert(cookie);
@@ -18,8 +17,8 @@
 			}
 			$("body>ul>li").click(function(){
 				$(this).addClass("active").siblings().removeClass("active");
-				alert($(this).attr("id"));
-			    $.cookie( "selected" ,  this.id  , { path: '/', expires: 10 });
+			    $.cookie( "style_cookie" ,  this.id  , { path: '/', expires: 10 });
+			    alert(123);
 			    //注意使用的是DOM对象还是Jquery对象
 			});
 		});
